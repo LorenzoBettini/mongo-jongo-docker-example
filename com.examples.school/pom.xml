@@ -74,7 +74,9 @@
             <image>
               <name>mongo</name>
               <run>
-                <ports>127.0.0.1:27017:27017</ports>
+                <ports>
+                  <port>27017:27017</port>
+                </ports>
               </run>
             </image>
           </images>
