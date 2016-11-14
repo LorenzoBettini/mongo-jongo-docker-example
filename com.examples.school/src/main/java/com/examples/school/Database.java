@@ -9,4 +9,6 @@ public interface Database {
 	public void updateDB(String id, String name);
 
 	public boolean exists(String id);
+
+	public Student findStudentById(String id);
 }

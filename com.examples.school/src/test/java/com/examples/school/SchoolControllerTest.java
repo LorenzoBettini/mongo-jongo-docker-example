@@ -37,4 +37,20 @@ public class SchoolControllerTest {
 		assertEquals(1, allStudents.size());	
 	}
 
+	@Test
+	public void testGetStudentByIdWhenStudentIsNotThere() {
+		students.add(new Student("1", "test"));
+		Student student = schoolController.getStudentById("2");
+		verify(database).findStudentById("2");
+		assertNull(student);
+	}
+
+	@Test
+	public void testGetStudentByIdWhenStudentIsThere() {
+		students.add(new Student("1", "test"));
+		when(database.findStudentById("1")).thenReturn(students.get(0));
+		Student student = schoolController.getStudentById("1");
+		verify(database).findStudentById("1");
+		assertNotNull(student);
+	}
 }
