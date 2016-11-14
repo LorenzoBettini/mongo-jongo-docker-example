@@ -6,7 +6,6 @@ public class SchoolController {
 	private Database database;
 
 	public SchoolController(Database database) {
-		super();
 		this.database = database;
 	}
 
